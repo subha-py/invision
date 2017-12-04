@@ -17,7 +17,7 @@ class PostSerialzer(serializers.HyperlinkedModelSerializer):
             'url',
             'pk',
             'title',
-            'description'
+            'description',
             'price',
             'latitude',
             'longitude',
