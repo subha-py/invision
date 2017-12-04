@@ -22,4 +22,9 @@ urlpatterns = [
         views.PhotoDetail.as_view(),
         name=views.PhotoDetail.name
     ),
+    url(
+        r'^$',
+        views.ApiRoot.as_view(),
+        name=views.ApiRoot.name
+    )
 ]

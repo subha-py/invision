@@ -13,4 +13,4 @@ class Photo(models.Model):
     name = models.CharField(max_length=120)
     size = models.IntegerField()
     post = models.ForeignKey(to=Post,on_delete=models.CASCADE,related_name='photos')
-    
+    image = models.ImageField()

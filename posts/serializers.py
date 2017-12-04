@@ -38,4 +38,5 @@ class PhotoSerializer(serializers.HyperlinkedModelSerializer):
             'post',
             'name',
             'size',
+            'image',
         )
