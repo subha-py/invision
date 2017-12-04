@@ -18,9 +18,27 @@ class ApiRoot(GenericAPIView):
     def get(self,request, *args, **kwargs):
         return Response(
             {
-                #todo: fill me up
+                'photo': reverse(PhotoList.name,request=request),
+                'post': reverse(PostList.name,request=request)
             }
         )
 
-class GameCategoryList(ListCreateAPIView):
-    pass
+class PostList(ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerialzer
+    name = 'post-list'
+
+class PostDetail(RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerialzer
+    name = 'post-detail'
+
+class PhotoList(ListCreateAPIView):
+    queryset = Photo.objects.all()
+    serializer_class = PhotoSerializer
+    name = 'photo-list'
+
+class PhotoDetail(RetrieveUpdateDestroyAPIView):
+    queryset = Photo.objects.all()
+    serializer_class = PhotoSerializer
+    name = 'photo-detail'
